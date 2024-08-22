@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="container">
+        <!-- Intro Section -->
+        <section class="intro">
+            <h1>Merhaba, Benim Adım Tarkan</h1>
+            <p>Ben bir [mesleğiniz/becerileriniz].</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
+            <h2>Projelerim</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <h3>Proje 1</h3>
+                    <p>Proje açıklaması.</p>
+                    <a href="#">Detaylar</a>
+                </div>
+                <div class="project-item">
+                    <h3>Proje 2</h3>
+                    <p>Proje açıklaması.</p>
+                    <a href="#">Detaylar</a>
+                </div>
+                <div class="project-item">
+                    <h3>Proje 3</h3>
+                    <p>Proje açıklaması.</p>
+                    <a href="#">Detaylar</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>
