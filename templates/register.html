@@ -1,34 +1,33 @@
-<!-- register.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     {% include 'header.html' %}
 
-    <div class="container">
-        <h1 class="form-title">Register</h1>
-        <form method="POST" class="auth-form">
+    <div class="register-container">
+        <h2>Create an Account</h2>
+        <form method="POST">
             {{ form.hidden_tag() }}
-            <div class="form-group">
-                {{ form.name.label(class="form-label") }}
-                {{ form.name(class="form-input") }}
+            <div class="input-group">
+                {{ form.name.label }}
+                {{ form.name(class="form-input", placeholder="Name") }}
             </div>
-            <div class="form-group">
-                {{ form.email.label(class="form-label") }}
-                {{ form.email(class="form-input") }}
+            <div class="input-group">
+                {{ form.email.label }}
+                {{ form.email(class="form-input", placeholder="Email") }}
             </div>
-            <div class="form-group">
-                {{ form.password.label(class="form-label") }}
-                {{ form.password(class="form-input") }}
+            <div class="input-group">
+                {{ form.password.label }}
+                {{ form.password(class="form-input", placeholder="Password") }}
             </div>
-            <button type="submit" class="btn">Register</button>
+            <button type="submit" class="register-button">Register</button>
         </form>
-        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
     </div>
 
     {% include 'footer.html' %}
