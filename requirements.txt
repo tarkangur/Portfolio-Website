@@ -1,0 +1,10 @@
+Bootstrap_Flask==2.4.0
+Flask_Login==0.6.3
+Flask==3.0.3
+Flask_WTF==1.2.1
+flask_sqlalchemy==3.1.1
+SQLAlchemy==2.0.32
+WTForms==3.1.2
+Flask-CKEditor==1.0.0
+pip==24.2
+Werkzeug==3.0.4
