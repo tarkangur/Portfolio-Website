@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="register-container">
+        <h2>Create an Account</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="input-group">
+                {{ form.name.label }}
+                {{ form.name(class="form-input", placeholder="Name") }}
+            </div>
+            <div class="input-group">
+                {{ form.email.label }}
+                {{ form.email(class="form-input", placeholder="Email") }}
+            </div>
+            <div class="input-group">
+                {{ form.password.label }}
+                {{ form.password(class="form-input", placeholder="Password") }}
+            </div>
+            <button type="submit" class="register-button">Register</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+    </div>
+{% endblock %}

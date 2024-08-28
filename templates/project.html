@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div class="project-detail-container">
+            <h1>{{ project.title }}</h1>
+            <h2 class="project-subtitle">{{ project.subtitle }}</h2>
+            <p>{{ project.body }}</p>
+            <div class="visit-project-container">
+                <a href="{{ project.url }}" target="_blank" class="visit-project-btn">Visit Project</a>
+                {% if current_user.id == 1: %}
+                <a href="{{ url_for('edit_project', project_id=project.id) }}" target="_blank" class="visit-project-btn">Edit Project</a>
+                <a href="{{ url_for('delete_project', project_id=project.id) }}" target="_blank" class="visit-project-btn">Delete Project</a>
+                {% endif %}
+            </div>
+        </div>
+{% endblock %}
