@@ -12,30 +12,27 @@
     <div class="container">
         <!-- Intro Section -->
         <section class="intro">
-            <h1>Merhaba, Benim Adım Tarkan</h1>
-            <p>Ben bir [mesleğiniz/becerileriniz].</p>
+            <h1>Hello, My Name is Tarkan</h1>
+            <p>I am a python developer.</p>
         </section>
 
         <!-- Projects Section -->
         <section class="projects">
-            <h2>Projelerim</h2>
+            <h1>My Projects</h1>
             <div class="project-list">
+                {% for project in all_projects %}
                 <div class="project-item">
-                    <h3>Proje 1</h3>
-                    <p>Proje açıklaması.</p>
-                    <a href="#">Detaylar</a>
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.subtitle }}</p>
+                    <a href="{{ url_for('show_project', project_id=project.id) }}">Details</a>
                 </div>
-                <div class="project-item">
-                    <h3>Proje 2</h3>
-                    <p>Proje açıklaması.</p>
-                    <a href="#">Detaylar</a>
-                </div>
-                <div class="project-item">
-                    <h3>Proje 3</h3>
-                    <p>Proje açıklaması.</p>
-                    <a href="#">Detaylar</a>
-                </div>
+                {% endfor %}
             </div>
+            {% if current_user.id == 1: %}
+            <div class="add-project-container">
+                <a href="{{ url_for('add_project') }}" class="add-project-btn">Add New Project</a>
+            </div>
+            {% endif %}
         </section>
     </div>
     {% include 'footer.html' %}
